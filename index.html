@@ -51,19 +51,27 @@
     </div>
 
     <div id="vote" class="container" ng-controller="VoteController as VoteCtrl">
-        <a class="btn btn-success" href="" role="button" ng-click="setPosition('President')">President</a>
-        <a class="btn btn-info" href="" role="button" ng-click="setPosition('Vice President')">Vice President</a>
-        <a class="btn btn-warning" href="" role="button" ng-click="setPosition('Director')">Director</a>
+        <!--<a class="btn btn-success" href="" role="button" ng-click="setPosition('President')">President</a>-->
+        <!--<a class="btn btn-info" href="" role="button" ng-click="setPosition('Vice President')">Vice President</a>-->
+        <!--<a class="btn btn-warning" href="" role="button" ng-click="setPosition('Director')">Director</a>-->
 
-        <div class="alert alert-success voffset-1" role="alert" ng-show="positionFilter.length">You are voting for <strong>{{ positionFilter }}</strong></div>
+        <div class="btn-group" role="group" aria-label="position">
+            <button type="button" class="btn btn-success" ng-click="setPosition(0)">President</button>
+            <button type="button" class="btn btn-primary" ng-click="setPosition(1)">Vice President</button>
+            <button type="button" class="btn btn-warning" ng-click="setPosition(2)">Director</button>
+        </div>
+        <div class="alert alert-warning voffset-1" role="alert"
+             ng-show="positionFilter">
+            You are voting for <strong>{{ positionFilter }}</strong>
+        </div>
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 centered-text" ng-repeat="candidate in candidates | filter: positionFilter: true">
                 <h2>{{ candidate.firstname + ' ' + candidate.lastname }}</h2>
                 <div class="profile-avatar">
-                    <img class="img-responsive" ng-src="{{ candidate.profileImage }}" alt="profile picture">
+                    <img class="img-responsive" ng-src="{{ candidate.profileImage }}" alt="profile picture" ng-click="registerVote($index)">
                 </div>
-                <p><a class="btn btn-default voffset-1" href="#" role="button">Vote</a></p>
+                <button type="button" class="btn btn-info voffset-1" ng-click="registerVote($index)">Vote</button>
             </div>
         </div>
         <hr>

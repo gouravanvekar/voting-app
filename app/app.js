@@ -4,12 +4,42 @@
     app.controller('VoteController', ['$scope', '$http', function($scope, $http){
         $http.get('voting_data.json').then(function(voteData){
             $scope.candidates = voteData.data;
-            console.log(candidates[0]);
         });
-        //$scope.positionFilter = "President";
+        $scope.positions = [{
+                name: 'President',
+                status: 'active'
+            },
+            {
+                name: 'Vice President',
+                status: 'active'
+            },
+            {
+                name: 'Director',
+                status: 'active'
+            }
+        ];
 
-        $scope.setPosition = function(position){
-            $scope.positionFilter = position;
+        $scope.getPositionStatus = function(){
+            return positions[currentPositionIndex].status;
+        }
+
+        $scope.setPosition = function(positionIndex){
+            $scope.currentPositionIndex = positionIndex;
+            $scope.positionFilter = $scope.positions[$scope.currentPositionIndex].name;
+
+            console.log($scope.positionFilter);
+        }
+
+        $scope.registerVote = function(candidateIndex) {
+            $scope.candidates[candidateIndex].voteCount += 1;
+
+            for (var position in $scope.positions) {
+                if ($scope.candidates[candidateIndex].position === position) {
+                    position.status = 'completed';
+                }
+            }
+
+            console.log('Name: ' + $scope.candidates[candidateIndex].firstname + ' Votes: ' + $scope.candidates[candidateIndex].voteCount)
         }
     }]);
 })();
