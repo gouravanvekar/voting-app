@@ -1,0 +1,17 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.centered-text {
+    text-align:center
+}
+
+.voffset-1 { margin-top: 10px; }
+
+.profile-avatar img {
+    border-radius: 50%;
+    border: 1px solid #333;
+    margin: 0 auto;
+    padding: 10px;
+}

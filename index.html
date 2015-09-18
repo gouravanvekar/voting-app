@@ -4,12 +4,71 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Real time voting app</title>
+    <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/styles/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/voting.css">
 </head>
 <body>
-    <div id="vote" ng-controller="VoteController as VoteCtrl">
-        
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Voting App</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to the first ever real time voting app</h1>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
     </div>
+
+    <div id="vote" class="container" ng-controller="VoteController as VoteCtrl">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 centered-text">
+                <h2>Name</h2>
+                <div class="profile-avatar">
+                    <img class="img-responsive" src="assets/images/01.jpg" alt="profile picture">
+                </div>
+                <p><a class="btn btn-default voffset-1" href="#" role="button">Vote</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; Voting App 2015</p>
+        </footer>
+    </div> <!-- /container -->
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="app/voting.js"></script>
 </body>
