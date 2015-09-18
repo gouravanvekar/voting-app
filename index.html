@@ -60,12 +60,14 @@
             <button type="button" class="btn btn-primary" ng-click="setPosition(1)">Vice President</button>
             <button type="button" class="btn btn-warning" ng-click="setPosition(2)">Director</button>
         </div>
+
+        <button type="button" class="btn btn-danger" ng-click="showResults()">Results</button>
         <div class="alert alert-warning voffset-1" role="alert"
              ng-show="positionFilter">
             You are voting for <strong>{{ positionFilter }}</strong>
         </div>
 
-        <div class="row">
+        <div class="row" ng-hide="displayResults">
             <div class="col-lg-3 col-md-3 col-sm-12 centered-text" ng-repeat="candidate in candidates | filter: positionFilter: true">
                 <h2>{{ candidate.firstname + ' ' + candidate.lastname }}</h2>
                 <div class="profile-avatar">
@@ -74,11 +76,40 @@
                 <button type="button" class="btn btn-info voffset-1" ng-click="registerVote($index)">Vote</button>
             </div>
         </div>
+
+        <div id="resultArea"#resultArea ng-show="displayResults">
+            <div class="dropdown voffset-1">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Select Position
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="position in positions"><a href="" ng-click="filterPosition = position.name">{{ position.name }}</a></li>
+                </ul>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Votes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="candidate in candidates | filter: filterPosition: true | orderBy : 'position'">
+                    <td>{{ candidate.firstname + ' ' + candidate.lastname }}</td>
+                    <td>{{ candidate.position }}</td>
+                    <td>{{ candidate.voteCount }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
         <hr>
         <footer>
             <p>&copy; Voting App 2015</p>
         </footer>
     </div> <!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
 </body>

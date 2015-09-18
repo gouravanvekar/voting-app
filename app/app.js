@@ -26,6 +26,7 @@
         $scope.setPosition = function(positionIndex){
             $scope.currentPositionIndex = positionIndex;
             $scope.positionFilter = $scope.positions[$scope.currentPositionIndex].name;
+            $scope.displayResults = false;
 
             console.log($scope.positionFilter);
         }
@@ -40,6 +41,10 @@
             }
 
             console.log('Name: ' + $scope.candidates[candidateIndex].firstname + ' Votes: ' + $scope.candidates[candidateIndex].voteCount)
+        }
+
+        $scope.showResults = function(){
+            $scope.displayResults = true;
         }
     }]);
 })();
