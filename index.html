@@ -46,30 +46,27 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
-            <h1>Welcome to the first ever real time voting app</h1>
+            <h1>Real time voting app</h1>
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
         </div>
     </div>
 
     <div id="vote" class="container" ng-controller="VoteController as VoteCtrl">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 centered-text">
-                <h2>Name</h2>
+            <div class="col-lg-3 col-md-3 col-sm-12 centered-text" ng-repeat="candidate in candidates">
+                <h2>{{ candidate.firstname + ' ' + candidate.lastname }}</h2>
                 <div class="profile-avatar">
-                    <img class="img-responsive" src="assets/images/01.jpg" alt="profile picture">
+                    <img class="img-responsive" ng-src="{{ candidate.profileImage }}" alt="profile picture">
                 </div>
                 <p><a class="btn btn-default voffset-1" href="#" role="button">Vote</a></p>
             </div>
         </div>
-
         <hr>
-
         <footer>
             <p>&copy; Voting App 2015</p>
         </footer>
     </div> <!-- /container -->
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
-    <script type="text/javascript" src="app/voting.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>

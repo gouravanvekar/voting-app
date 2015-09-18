@@ -2,64 +2,57 @@
   {
     "firstname": "John",
     "lastname": "Smith",
-    "email": "sample@example.com",
-    "position": "",
+    "email": "sample1@example.com",
+    "position": "Vice President",
     "profileImage": "assets/images/01.jpg"
   },
   {
     "firstname": "Neil",
     "lastname": "Peterson",
-    "email": "sample1@example.com",
-    "position": "",
-    "profileImage": "assets/images/01.jpg"
+    "email": "sample2@example.com",
+    "position": "Director",
+    "profileImage": "assets/images/02.jpg"
   },
   {
     "firstname": "Matthew",
     "lastname": "Broad",
-    "email": "sample2@example.com",
-    "position": "",
-    "profileImage": "assets/images/02.jpg"
-  },
-  {
-    "firstname": "Josh",
-    "lastname": "Waugh",
     "email": "sample3@example.com",
-    "position": "",
+    "position": "President",
     "profileImage": "assets/images/03.jpg"
   },
   {
     "firstname": "Adam",
     "lastname": "Watson",
     "email": "sample4@example.com",
-    "position": "",
+    "position": "Vice President",
     "profileImage": "assets/images/04.jpg"
   },
   {
     "firstname": "Martina",
     "lastname": "Williams",
     "email": "sample5@example.com",
-    "position": "",
+    "position": "Vice President",
     "profileImage": "assets/images/05.jpg"
   },
   {
     "firstname": "Yen",
     "lastname": "Lee",
     "email": "sample6@example.com",
-    "position": "",
+    "position": "Director",
     "profileImage": "assets/images/06.jpg"
   },
   {
     "firstname": "Jane",
     "lastname": "Doe",
     "email": "sample7@example.com",
-    "position": "",
+    "position": "President",
     "profileImage": "assets/images/07.jpg"
-  }
+  },
   {
     "firstname": "Mark",
     "lastname": "Jones",
     "email": "sample8@example.com",
-    "position": "",
+    "position": "Director",
     "profileImage": "assets/images/08.jpg"
   }
  ]
