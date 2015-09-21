@@ -1,5 +1,6 @@
 [
   {
+    "candidateId": 1,
     "firstname": "John",
     "lastname": "Smith",
     "email": "sample1@example.com",
@@ -8,6 +9,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 2,
     "firstname": "Neil",
     "lastname": "Peterson",
     "email": "sample2@example.com",
@@ -16,6 +18,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 3,
     "firstname": "Matthew",
     "lastname": "Broad",
     "email": "sample3@example.com",
@@ -24,6 +27,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 4,
     "firstname": "Adam",
     "lastname": "Watson",
     "email": "sample4@example.com",
@@ -32,6 +36,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 5,
     "firstname": "Martina",
     "lastname": "Williams",
     "email": "sample5@example.com",
@@ -40,6 +45,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 6,
     "firstname": "Yen",
     "lastname": "Lee",
     "email": "sample6@example.com",
@@ -48,6 +54,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 7,
     "firstname": "Jane",
     "lastname": "Doe",
     "email": "sample7@example.com",
@@ -56,6 +63,7 @@
     "voteCount": 0
   },
   {
+    "candidateId": 8,
     "firstname": "Mark",
     "lastname": "Jones",
     "email": "sample8@example.com",

@@ -1,10 +1,17 @@
 (function(){
-	var app = angular.module('myVote', []);
+	var app = angular.module('myVote', ["common.services", "votingResourceMock"]);
 
-    app.controller('VoteController', ['$scope', '$http', function($scope, $http){
-        $http.get('voting_data.json').then(function(voteData){
-            $scope.candidates = voteData.data;
+    app.controller('VoteController', ['$scope', 'votingResource', function($scope, votingResource){
+        //Add $http as dependency
+        //$http.get('voting_data.json')
+        //     .then(function(voteData){
+        //        $scope.candidates = voteData.data;
+        //});
+
+        votingResource.query(function(data){
+            $scope.candidates = data;
         });
+
         $scope.positions = [{
                 name: 'President',
                 status: 'active'
