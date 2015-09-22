@@ -1,57 +1,29 @@
 (function(){
-	var app = angular.module('myVote', ["common.services", "votingResourceMock"]);
+	var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock"]);
 
-    app.controller('VoteController', ['$scope', 'votingResource', function($scope, votingResource){
-        //Add $http as dependency
-        //$http.get('voting_data.json')
-        //     .then(function(voteData){
-        //        $scope.candidates = voteData.data;
-        //});
+    app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
+        function($stateProvider, $urlRouterProvider, $locationProvider) {
+            //$locationProvider.html5Mode({
+            //    enabled: true,
+            //    requireBase: false
+            //});
 
-        votingResource.query(function(data){
-            $scope.candidates = data;
-        });
-
-        $scope.positions = [{
-                name: 'President',
-                status: 'active'
-            },
-            {
-                name: 'Vice President',
-                status: 'active'
-            },
-            {
-                name: 'Director',
-                status: 'active'
-            }
-        ];
-
-        $scope.getPositionStatus = function(){
-            return positions[currentPositionIndex].status;
+            $urlRouterProvider.otherwise('/');
+            $stateProvider
+                .state('home', {
+                    url: "/",
+                    templateUrl: "app/common/templates/landing.html"
+                })
+                .state('candidates', {
+                    url: "/candidates",
+                    templateUrl: "app/candidates/candidatesListView.html",
+                    controller: 'CandidateController as CandidateCtrl'
+                })
+                .state('position', {
+                    url: "/vote/0",
+                    templateUrl: "app/vote/votingCandidates.html",
+                    controller: 'CandidateController as VoteCtrl'
+                })
         }
-
-        $scope.setPosition = function(positionIndex){
-            $scope.currentPositionIndex = positionIndex;
-            $scope.positionFilter = $scope.positions[$scope.currentPositionIndex].name;
-            $scope.displayResults = false;
-
-            console.log($scope.positionFilter);
-        }
-
-        $scope.registerVote = function(candidateIndex) {
-            $scope.candidates[candidateIndex].voteCount += 1;
-
-            for (var position in $scope.positions) {
-                if ($scope.candidates[candidateIndex].position === position) {
-                    position.status = 'completed';
-                }
-            }
-
-            console.log('Name: ' + $scope.candidates[candidateIndex].firstname + ' Votes: ' + $scope.candidates[candidateIndex].voteCount)
-        }
-
-        $scope.showResults = function(){
-            $scope.displayResults = true;
-        }
-    }]);
+    ]);
 })();
