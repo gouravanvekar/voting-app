@@ -1,0 +1,25 @@
+<div id="resultArea"#resultArea ng-show="displayResults">
+    <div class="dropdown voffset-1">
+        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Select Position
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="position in positions"><a href="" ng-click="filterPosition = position.name">{{ position.name }}</a></li>
+        </ul>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Votes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="candidate in candidates | filter: filterPosition: true | orderBy : 'position'">
+            <td>{{ candidate.firstname + ' ' + candidate.lastname }}</td>
+            <td>{{ candidate.position }}</td>
+            <td>{{ candidate.voteCount }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

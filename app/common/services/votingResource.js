@@ -6,6 +6,8 @@
     angular
         .module("common.services")
         .factory("votingResource", ["$resource", function($resource){
-            return $resource("/api/candidates/:candidateId");
+            return $resource("/api/vote/:id", {
+                id: '@id'
+            });
         }]);
 })();

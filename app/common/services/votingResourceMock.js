@@ -121,6 +121,27 @@
             return [200, candidate, {}]
         });
 
+        var positionUrl = "/api/vote";
+        var positionRegex = new RegExp(positionUrl + "/[0-9][0-9]*", '');
+
+        $httpBackend.whenGET(positionRegex).respond(function(method, url, data){
+            var candidateFilter = [];
+            var positions = ["President", "Vice President", "Director"];
+            var parameters = url.split("/");
+            var length = parameters.length;
+            var id = parseInt(parameters[length-1]);
+
+            console.log(id);
+            if(id >= 0 && id < positions.length){
+                for(var i=0; i < candidates.length; i++){
+                    if (candidates[i].position == positions[id]){
+                        candidateFilter.push(candidates[i]);
+                    }
+                };
+            }
+            return [200, candidateFilter, {}]
+        });
+
         $httpBackend.whenGET(/app/).passThrough();
     });
 })();

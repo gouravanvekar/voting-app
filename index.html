@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Voting App</a>
+                <a class="navbar-brand" ui-sref="home">Voting App</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right" role="form">
@@ -47,62 +47,19 @@
     <div class="jumbotron">
         <div class="container">
             <h1>Real time voting app</h1>
+            <hr>
+            <div class="btn-group" role="group" aria-label="position">
+                <a class="btn btn-success"role="button" ui-sref="position({ positionId: 0 })">President</a>
+                <a class="btn btn-primary"role="button" ui-sref="position({ positionId: 1 })">Vice President</a>
+                <a class="btn btn-warning"role="button" ui-sref="position({ positionId: 2 })">Director</a>
+            </div>
+            <a class="btn btn-danger"role="button" ui-sref="results">Results</a>
+            <a class="btn btn-info"role="button" ui-sref="candidates">All Candidates</a>
         </div>
     </div>
 
-    <div id="vote" class="container" ng-controller="VoteController as VoteCtrl">
-        <!--<a class="btn btn-success" href="" role="button" ng-click="setPosition('President')">President</a>-->
-        <!--<a class="btn btn-info" href="" role="button" ng-click="setPosition('Vice President')">Vice President</a>-->
-        <!--<a class="btn btn-warning" href="" role="button" ng-click="setPosition('Director')">Director</a>-->
-
-        <div class="btn-group" role="group" aria-label="position">
-            <button type="button" class="btn btn-success" ng-click="setPosition(0)">President</button>
-            <button type="button" class="btn btn-primary" ng-click="setPosition(1)">Vice President</button>
-            <button type="button" class="btn btn-warning" ng-click="setPosition(2)">Director</button>
-        </div>
-
-        <button type="button" class="btn btn-danger" ng-click="showResults()">Results</button>
-        <div class="alert alert-warning voffset-1" role="alert"
-             ng-show="positionFilter">
-            You are voting for <strong>{{ positionFilter }}</strong>
-        </div>
-
-        <div class="row" ng-hide="displayResults">
-            <div class="col-lg-3 col-md-3 col-sm-12 centered-text" ng-repeat="candidate in candidates | filter: positionFilter: true">
-                <h2>{{ candidate.firstname + ' ' + candidate.lastname }}</h2>
-                <div class="profile-avatar">
-                    <img class="img-responsive" ng-src="{{ candidate.profileImage }}" alt="profile picture" ng-click="registerVote($index)">
-                </div>
-                <button type="button" class="btn btn-info voffset-1" ng-click="registerVote($index)">Vote</button>
-            </div>
-        </div>
-
-        <div id="resultArea"#resultArea ng-show="displayResults">
-            <div class="dropdown voffset-1">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Select Position
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="position in positions"><a href="" ng-click="filterPosition = position.name">{{ position.name }}</a></li>
-                </ul>
-            </div>
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Votes</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="candidate in candidates | filter: filterPosition: true | orderBy : 'position'">
-                    <td>{{ candidate.firstname + ' ' + candidate.lastname }}</td>
-                    <td>{{ candidate.position }}</td>
-                    <td>{{ candidate.voteCount }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
+    <div id="vote" class="container">
+        <div ui-view></div>
         <hr>
         <footer>
             <p>&copy; Voting App 2015</p>
@@ -113,13 +70,18 @@
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-resource.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-mocks.js"></script>
+    <script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
 
     <!--Application Script-->
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/voting/voting.js"></script>
+    <script type="text/javascript" src="app/candidate/candidate.js"></script>
+    <script type="text/javascript" src="app/results/results.js"></script>
 
     <!--Services-->
     <script type="text/javascript" src="app/common/services/common.services.js"></script>
     <script type="text/javascript" src="app/common/services/votingResource.js"></script>
+    <script type="text/javascript" src="app/common/services/candidateResource.js"></script>
     <script type="text/javascript" src="app/common/services/votingResourceMock.js"></script>
 </body>
 </html>
