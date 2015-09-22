@@ -85,7 +85,7 @@
 
         $httpBackend.whenGET(candidatesUrl).respond(candidates);
         var editRegex = new RegExp(candidatesUrl + "/[0-9][0-9]*", '');
-
+console.log(editRegex);
         $httpBackend.whenGET(editRegex).respond(function(method, url, data){
             var candidate = {"candidateId": 0};
             var parameters = url.split("/");
@@ -100,6 +100,7 @@
                     }
                 };
             }
+            console.log(candidate);
             return [200, candidate, {}]
         });
 

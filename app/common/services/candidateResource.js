@@ -6,6 +6,9 @@
     angular
         .module("common.services")
         .factory("candidateResource", ["$resource", function($resource){
-            return $resource("/api/candidates/:candidateId");
+            console.log("I am here");
+            return $resource("/api/candidates/:candidateId", {
+                candidateId: '@candidateId'
+            });
         }]);
 })();

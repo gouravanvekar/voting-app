@@ -2,13 +2,8 @@
     "use strict";
     var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock"]);
 
-    app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
-        function($stateProvider, $urlRouterProvider, $locationProvider) {
-            //$locationProvider.html5Mode({
-            //    enabled: true,
-            //    requireBase: false
-            //});
-
+    app.config(["$stateProvider", "$urlRouterProvider",
+        function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
                 .state('home', {
@@ -19,6 +14,11 @@
                     url: "/candidates",
                     templateUrl: "app/candidate/candidateView.html",
                     controller: 'CandidateController as CandidateCtrl'
+                })
+                .state('candidateDetails', {
+                    url: "/candidates/:candidateId",
+                    templateUrl: "app/candidate/candidateDetails.html",
+                    controller: 'CandidateDetailsController as DetailsCtrl'
                 })
                 .state('position', {
                     url: "/vote/:positionId",
