@@ -9,8 +9,8 @@
         <div class="profile-avatar">
             <img class="img-responsive"
                  ng-src="{{ candidate.profileImage }}" alt="profile picture"
-                 ng-click="registerVote(candidate.candidateId)" />
+                 ui-sref="candidateDetails({ candidateId: candidate.candidateId })" />
         </div>
-        <button type="button" class="btn btn-info voffset-1" ng-click="registerVote(candidate.candidateId)">Vote</button>
+        <a ui-sref="candidateDetails({ candidateId: candidate.candidateId })" class="btn btn-info voffset-1">Vote</a>
     </div>
 </div>

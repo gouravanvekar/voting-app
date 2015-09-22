@@ -85,7 +85,6 @@
 
         $httpBackend.whenGET(candidatesUrl).respond(candidates);
         var editRegex = new RegExp(candidatesUrl + "/[0-9][0-9]*", '');
-console.log(editRegex);
         $httpBackend.whenGET(editRegex).respond(function(method, url, data){
             var candidate = {"candidateId": 0};
             var parameters = url.split("/");
@@ -100,13 +99,11 @@ console.log(editRegex);
                     }
                 };
             }
-            console.log(candidate);
             return [200, candidate, {}]
         });
 
-        $httpBackend.whenPOST(candidatesUrl).respond(function(method, url, data){
+        $httpBackend.whenPOST(editRegex).respond(function(method, url, data){
             var candidate = angular.fromJson(data);
-
             if(!candidate.candidateId){
                 candidate.candidateId = candidates[candidates.length -1].candidateId + 1;
                 candidates.push(candidate);
@@ -132,7 +129,6 @@ console.log(editRegex);
             var length = parameters.length;
             var id = parseInt(parameters[length-1]);
 
-            console.log(id);
             if(id >= 0 && id < positions.length){
                 for(var i=0; i < candidates.length; i++){
                     if (candidates[i].position == positions[id]){

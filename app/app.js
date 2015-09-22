@@ -28,7 +28,7 @@
                 .state('results', {
                     url: "/results",
                     templateUrl: "app/results/resultsView.html",
-                    controller: 'ResultsController as ResultsCtrl'
+                    controller: 'CandidateController as CandidateCtrl'
                 })
         }
     ]);
