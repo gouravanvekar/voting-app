@@ -30,6 +30,16 @@
                     templateUrl: "app/results/resultsView.html",
                     controller: 'ResultsController as ResultsCtrl'
                 })
+                .state('analysis', {
+                    url: "/analysis",
+                    templateUrl: "app/results/chartView.html",
+                    controller: 'ResultsController as ResultsCtrl'
+                })
+                .state('winners', {
+                    url: "/winners",
+                    templateUrl: "app/results/winnersView.html",
+                    controller: 'ResultsController as ResultsCtrl'
+                })
         }
     ]);
 })();
