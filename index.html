@@ -12,7 +12,8 @@
         }
     </style>
     <link rel="stylesheet" href="assets/styles/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/styles/voting.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/voting.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/ui-grid.min.css">
 </head>
 <body>
     <!--[if lt IE 8]>
@@ -53,7 +54,17 @@
                 <a class="btn btn-primary"role="button" ui-sref="position({ positionId: 1 })">Vice President</a>
                 <a class="btn btn-warning"role="button" ui-sref="position({ positionId: 2 })">Director</a>
             </div>
-            <a class="btn btn-danger"role="button" ui-sref="results">Results</a>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Results <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a ui-sref="results">Grid</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ui-sref="results">Analytics</a></li>
+                </ul>
+            </div>
             <a class="btn btn-info"role="button" ui-sref="candidates">All Candidates</a>
         </div>
     </div>
@@ -70,6 +81,7 @@
     <script type="text/javascript" src="assets/js/angular-resource.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-mocks.js"></script>
     <script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="assets/js/ui-grid.min.js"></script>
 
     <!--Application Script-->
     <script type="text/javascript" src="app/app.js"></script>

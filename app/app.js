@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock"]);
+    var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock", "ui.grid"]);
 
     app.config(["$stateProvider", "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {
@@ -28,7 +28,7 @@
                 .state('results', {
                     url: "/results",
                     templateUrl: "app/results/resultsView.html",
-                    controller: 'CandidateController as CandidateCtrl'
+                    controller: 'ResultsController as ResultsCtrl'
                 })
         }
     ]);

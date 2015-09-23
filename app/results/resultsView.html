@@ -1,18 +1,2 @@
-<div id="resultArea">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Votes</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="candidate in candidates">
-            <td>{{ candidate.firstname + ' ' + candidate.lastname }}</td>
-            <td>{{ candidate.position }}</td>
-            <td>{{ candidate.voteCount }}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<div ui-grid="{ data: candidateResults, enableFiltering: true  }" class="resultsGrid"></div>
+<!--<div ui-grid="gridOptions" ui-grid-grouping class="resultsGrid"></div>-->

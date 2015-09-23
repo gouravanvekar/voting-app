@@ -15,7 +15,7 @@
                 "email": "sample1@example.com",
                 "position": "Vice President",
                 "profileImage": "assets/images/01.jpg",
-                "voteCount": 0
+                "voteCount": 286
             },
             {
                 "candidateId": 2,
@@ -24,7 +24,7 @@
                 "email": "sample2@example.com",
                 "position": "Director",
                 "profileImage": "assets/images/02.jpg",
-                "voteCount": 0
+                "voteCount": 224
             },
             {
                 "candidateId": 3,
@@ -33,7 +33,7 @@
                 "email": "sample3@example.com",
                 "position": "President",
                 "profileImage": "assets/images/03.jpg",
-                "voteCount": 0
+                "voteCount": 253
             },
             {
                 "candidateId": 4,
@@ -42,7 +42,7 @@
                 "email": "sample4@example.com",
                 "position": "Vice President",
                 "profileImage": "assets/images/04.jpg",
-                "voteCount": 0
+                "voteCount": 62
             },
             {
                 "candidateId": 5,
@@ -51,7 +51,7 @@
                 "email": "sample5@example.com",
                 "position": "Vice President",
                 "profileImage": "assets/images/05.jpg",
-                "voteCount": 0
+                "voteCount": 198
             },
             {
                 "candidateId": 6,
@@ -60,7 +60,7 @@
                 "email": "sample6@example.com",
                 "position": "Director",
                 "profileImage": "assets/images/06.jpg",
-                "voteCount": 0
+                "voteCount": 222
             },
             {
                 "candidateId": 7,
@@ -69,7 +69,7 @@
                 "email": "sample7@example.com",
                 "position": "President",
                 "profileImage": "assets/images/07.jpg",
-                "voteCount": 0
+                "voteCount": 326
             },
             {
                 "candidateId": 8,
@@ -78,7 +78,7 @@
                 "email": "sample8@example.com",
                 "position": "Director",
                 "profileImage": "assets/images/08.jpg",
-                "voteCount": 0
+                "voteCount": 161
             }
         ];
         var candidatesUrl = "/api/candidates";
