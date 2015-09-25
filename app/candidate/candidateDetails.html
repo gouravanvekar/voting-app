@@ -1,6 +1,7 @@
 <div class="alert alert-success" role="alert"
      ng-show="voted">
-     You have voted successfully <strong>Thank you!</strong>
+    <strong>Thank you!</strong> You have voted successfully.
+    <a ui-sref="analysis" class="alert-link">View Results</a>
 </div>
 
 <div class="container">
@@ -59,7 +60,7 @@
                 <div class="panel-footer">
                     <a href="mailto:{{ currentCandidate.email }}" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                     <span class="pull-right">
-                        <a ui-sref="candidates" class="btn btn-primary">Back</a>
+                        <a ng-click="goBack()" class="btn btn-primary">Back</a>
                         <a class="btn btn-success" ng-hide="voted" ng-click="registerVote(currentCandidate)">Vote</a>
                     </span>
                 </div>

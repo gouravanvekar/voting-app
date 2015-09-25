@@ -20,6 +20,11 @@
                     templateUrl: "app/candidate/candidateDetails.html",
                     controller: 'CandidateDetailsController as DetailsCtrl'
                 })
+                .state('viewCandidates', {
+                    url: "/view/:candidateId",
+                    templateUrl: "app/candidate/viewCandidate.html",
+                    controller: 'CandidateDetailsController as DetailsCtrl'
+                })
                 .state('position', {
                     url: "/vote/:positionId",
                     templateUrl: "app/voting/votingCandidates.html",
@@ -42,4 +47,11 @@
                 })
         }
     ]);
+
+    app.run(['$window', '$rootScope',
+        function ($window ,  $rootScope) {
+            $rootScope.goBack = function(){
+                $window.history.back();
+            }
+        }]);
 })();
