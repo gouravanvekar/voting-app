@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock", "ui.grid", "nvd3"]);
+    var app = angular.module('myVote', ["common.services", "ui.router", "votingResourceMock", "ui.grid", "nvd3", "ui.bootstrap"]);
 
     app.config(["$stateProvider", "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {

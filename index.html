@@ -20,28 +20,42 @@
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" ui-sref="home">Voting App</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right" role="form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">Sign in</button>
-                </form>
-            </div><!--/.navbar-collapse -->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"  ui-sref="home">Home</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" collapse="navCollapsed">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="position({ positionId: 0 })">President</a></li>
+                <li><a ui-sref="position({ positionId: 1 })">Vice President</a></li>
+                <li><a ui-sref="position({ positionId: 2 })">Director</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="candidates">All Candidates</a>
+                </li>
+                <li class="dropdown" dropdown="">
+                    <a href="#" class="dropdown-toggle" dropdown-toggle="" data-toggle="dropdown">Results<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="menuitem"><a ui-sref="results">Grid</a></li>
+                        <li role="menuitem"><a ui-sref="analysis">Charts</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li role="menuitem"><a ui-sref="winners">Winners</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
         </div>
     </nav>
 
@@ -50,24 +64,6 @@
         <div class="container">
             <h1>Real time voting app</h1>
             <hr>
-            <div class="btn-group" role="group" aria-label="position">
-                <a class="btn btn-success"role="button" ui-sref="position({ positionId: 0 })">President</a>
-                <a class="btn btn-primary"role="button" ui-sref="position({ positionId: 1 })">Vice President</a>
-                <a class="btn btn-warning"role="button" ui-sref="position({ positionId: 2 })">Director</a>
-            </div>
-
-            <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Results <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a ui-sref="results">Grid</a></li>
-                    <li><a ui-sref="analysis">Charts</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a ui-sref="winners">Winners</a></li>
-                </ul>
-            </div>
-            <a class="btn btn-info"role="button" ui-sref="candidates">All Candidates</a>
         </div>
     </div>
     <div id="vote" class="container">
@@ -76,14 +72,14 @@
         <footer>
             <p>&copy; Voting App 2015</p>
         </footer>
-    </div> <!-- /container -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </div>
+
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-resource.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-mocks.js"></script>
     <script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="assets/js/ui-grid.min.js"></script>
+    <script data-semver="0.12.0" src="assets/js/ui-bootstrap-tpls-0.12.0.js"></script>
 
     <script type="text/javascript" src="assets/js/d3.min.js"></script>
     <script type="text/javascript" src="assets/js/nv.d3.min.js"></script>
