@@ -60,3 +60,36 @@
     text-align: center;
     margin-top: 10px;
 }
+
+.animate-me, .toppad {
+    -webkit-animation-name: dropProfile;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1s;
+
+    animation-name: dropProfile;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes dropProfile {
+    0% {
+        -webkit-transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes dropProfile {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
