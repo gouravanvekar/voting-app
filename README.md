@@ -15,7 +15,7 @@ $ git clone https://github.com/gouravanvekar/voting-app.git voting-app
 
 2. Create a new Visual Studio blank solution.
 
-3. Add an the voting app to the solution by navigating to Add > Existing Website > 'Path to the cloned repository' > Open
+3. Add the voting app to the solution by navigating to Add > Existing Website > 'Path to the cloned repository' > Open
 
 4. Set the voting-app project as the StartUp project.
 
