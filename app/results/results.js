@@ -1,6 +1,3 @@
-/**
- * Created by ganvekar on 9/22/2015.
- */
 (function(){
     angular.module('myVote').
         controller('ResultsController', ['$scope', 'candidateResource', function($scope, candidateResource){

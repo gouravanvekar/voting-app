@@ -1,6 +1,3 @@
-/**
- * Created by ganvekar on 9/21/2015.
- */
 (function(){
     "use strict";
     var mockApp = angular
@@ -10,8 +7,8 @@
         var candidates = [
             {
                 "candidateId": 1,
-                "firstname": "John",
-                "lastname": "Smith",
+                "firstname": "Bruce",
+                "lastname": "Wayne",
                 "email": "sample1@example.com",
                 "position": "Vice President",
                 "profileImage": "assets/images/01.jpg",
@@ -19,8 +16,8 @@
             },
             {
                 "candidateId": 2,
-                "firstname": "Neil",
-                "lastname": "Peterson",
+                "firstname": "Peter",
+                "lastname": "Parker",
                 "email": "sample2@example.com",
                 "position": "Director",
                 "profileImage": "assets/images/02.jpg",
@@ -28,8 +25,8 @@
             },
             {
                 "candidateId": 3,
-                "firstname": "Matthew",
-                "lastname": "Broad",
+                "firstname": "Jason",
+                "lastname": "Bourne",
                 "email": "sample3@example.com",
                 "position": "President",
                 "profileImage": "assets/images/03.jpg",
@@ -37,8 +34,8 @@
             },
             {
                 "candidateId": 4,
-                "firstname": "Adam",
-                "lastname": "Watson",
+                "firstname": "Tony",
+                "lastname": "Stark",
                 "email": "sample4@example.com",
                 "position": "Vice President",
                 "profileImage": "assets/images/04.jpg",
@@ -64,8 +61,8 @@
             },
             {
                 "candidateId": 7,
-                "firstname": "Jane",
-                "lastname": "Doe",
+                "firstname": "Selina",
+                "lastname": "Kyle",
                 "email": "sample7@example.com",
                 "position": "President",
                 "profileImage": "assets/images/07.jpg",
@@ -73,8 +70,8 @@
             },
             {
                 "candidateId": 8,
-                "firstname": "Mark",
-                "lastname": "Jones",
+                "firstname": "Ethan",
+                "lastname": "Hunt",
                 "email": "sample8@example.com",
                 "position": "Director",
                 "profileImage": "assets/images/08.jpg",
@@ -85,6 +82,7 @@
 
         $httpBackend.whenGET(candidatesUrl).respond(candidates);
         var editRegex = new RegExp(candidatesUrl + "/[0-9][0-9]*", '');
+
         $httpBackend.whenGET(editRegex).respond(function(method, url, data){
             var candidate = {"candidateId": 0};
             var parameters = url.split("/");

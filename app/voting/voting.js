@@ -1,6 +1,3 @@
-/**
- * Created by ganvekar on 9/22/2015.
- */
 (function(){
     angular.module('myVote').
         controller('VoteController', ['$scope', '$stateParams', 'votingResource', function($scope, $stateParams, votingResource){
@@ -28,7 +25,6 @@
         $scope.registerVote = function(candidateId) {
             $scope.candidates[candidateId].voteCount += 1;
             $scope.positions[$scope.currentPositionIndex].status = 'completed';
-            console.log('Name: ' + $scope.candidates[candidateId].firstname + ' Votes: ' + $scope.candidates[candidateId].voteCount)
         }
     }]);
 })();
