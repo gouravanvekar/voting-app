@@ -1,6 +1,8 @@
 # Angular Voting App
 *A simple voting app created using AngularJS framework by [@gouravanvekar](https://twitter.com/gouravanvekar)*
 
+[Click here for a demo](https://ga-voting-app.herokuapp.com/)
+
 ## Configuration
 
 ### Visual Studio
